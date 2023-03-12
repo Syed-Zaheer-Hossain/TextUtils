@@ -66,21 +66,6 @@ function App() {
           <Route path="/Utility-Available" element={<UtilsAvail mode={mode}/>}/>
             
         </Routes>
-      
-        {/* <Switch>
-          <Route path="/">
-            <Utils bgmode={bgmode} showAlert={showAlert}/>
-          </Route>
-          <Route path="/about">
-            <About mode ={mode}/>
-          </Route>
-          <Route path="/contact">
-            <Contact mode={mode}/>
-          </Route>
-          <Route path="/UtilityAvailable">
-            <UtilsAvail mode={mode}/>
-          </Route>
-        </Switch> */}
       </Router>
 
   );
