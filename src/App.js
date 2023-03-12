@@ -57,7 +57,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Utils bgmode={bgmode} showAlert={showAlert}/>}/>
 
-          <Route path="/Text-Utility" element={<Utils bgmode={bgmode} showAlert={showAlert}/>}/>
+          <Route path="/TextUtils" element={<Utils bgmode={bgmode} showAlert={showAlert}/>}/>
             
           <Route path="/about" element={<About mode ={mode}/>}/>
             
