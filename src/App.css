@@ -15,6 +15,7 @@ body{
 :root{
   --bg-dark:rgb(41, 47, 65);
   --bg-light:white;
+  --border:rgb(129, 124, 124);
 }
 
 #root{
@@ -161,10 +162,23 @@ body{
 }
 
 .navbar ul li:hover{
-  color: black;
   background-color: greenyellow;
   cursor: pointer;
   transition: 500ms;
+}
+
+.navbar ul li:hover a{
+  color: black;
+}
+
+.navbar-dark ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-light ul li a{
+  text-decoration: none;
+  color: crimson;
 }
 
 .switch-input-label p{
@@ -198,7 +212,7 @@ body{
 }
 
 .size{
-  height:100%;
+  height:auto;
 }
 
 .cap{
@@ -298,6 +312,76 @@ input:checked +.slider::before{
     right:2rem;
   }
 }*/
+
+.accordion{
+  width:90%;
+  margin: 1rem auto;
+  padding:.5rem;
+  font-size: 2rem;
+}
+
+.accordion-head{
+  background-image: linear-gradient(to right,rgb(255, 5, 255),rgb(153, 0, 255));
+  border:2px solid var(--border);
+  padding:.5rem 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  text-align: left;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.accordion-body{
+  border:2px solid var(--border);
+  padding:0 1rem;
+  max-height: 0px;
+  transition:500ms;
+  overflow: hidden;
+  border-radius: 0 0 10px 10px;
+  text-align: left;
+}
+
+.acc-dark{
+  color:white;
+}
+
+.active {
+  max-height:100rem;
+  padding: 1rem;
+  overflow: hidden;
+  transition: max-height 2000ms ease-in-out ;
+}
+
+.about-heading{
+  font-size: 3.5rem;
+  font-weight: 1000;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  text-decoration: underline;
+}
+
+.contact-text{
+  margin-top: 5rem;
+  font-size: 2rem;
+  /* color: black; */
+}
+
+.utils-list{
+  list-style: disc;
+  font-size: 2rem;
+  text-align: left; 
+  margin: auto;
+  max-width: 22%;
+}
+
+.utils-list li{
+  margin:1.5rem 0;
+}
+
 @media screen and (max-width:400px){
   #switch{
     top:.5rem;
@@ -312,5 +396,13 @@ input:checked +.slider::before{
   .butn{
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width:1418px){
+  .utils-list{
+    list-style:none;
+    text-align:center;
+    max-width:100%;
   }
 }

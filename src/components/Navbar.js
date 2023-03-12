@@ -1,5 +1,6 @@
 // import React, { useState } from 'react';
 // import {  } from "props";
+import {Link} from "react-router-dom";
 
 export default function Navbar(props) {
 
@@ -7,10 +8,10 @@ export default function Navbar(props) {
         <div className={`navbar navbar-${props.mode}`}>
             <div>
                 <ul>
-                    <li>HOME</li>
-                    <li>ABOUT</li>
-                    <li>UTILITIES AVAILABLE</li>
-                    <li>CONTACT</li>
+                    <li><Link to="/">HOME</Link></li>
+                    <li><Link to="/about">ABOUT</Link></li>
+                    <li><Link to="/Utility-Available">UTILITIES AVAILABLE</Link></li>
+                    <li><Link to="/contact">CONTACT</Link></li>
                 </ul>
             </div>
             <div id="switch">

@@ -34,7 +34,7 @@ export default function Utils(props) {
     
     const handleCopy=()=>{
         let copied=document.getElementById("textarea");
-        copied.select();
+        // copied.select();
         if(clk.style.textTransform ==="uppercase"){
             navigator.clipboard.writeText(copied.value.toUpperCase());
         }

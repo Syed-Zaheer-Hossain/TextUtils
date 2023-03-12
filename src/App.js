@@ -1,9 +1,18 @@
-// import logo from './logo.svg';
+import React, { useState } from 'react';
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+
 import './App.css';
 import Navbar from './components/Navbar';
 import Utils from './components/Utils';
-import React, { useState } from 'react';
 import Alerts from './components/Alerts';
+import Contact from './components/Contact';
+import UtilsAvail from './components/UtilsAvail';
+import About from "./components/About";
 
 function App() {
 
@@ -40,13 +49,40 @@ function App() {
     }
   }
 
-
   return (
-    <div>
-      <Navbar mode={mode} modeText={modeText} toggle={toggleMode}/>
-      <Alerts Alrt={Alert}/>
-      <Utils bgmode={bgmode} showAlert={showAlert}/>
-    </div>
+    
+      <Router>
+        <Navbar mode={mode} modeText={modeText} toggle={toggleMode}/>
+        <Alerts Alrt={Alert}/>
+        <Routes>
+          <Route path="/" element={<Utils bgmode={bgmode} showAlert={showAlert}/>}/>
+
+          <Route path="/Text-Utility" element={<Utils bgmode={bgmode} showAlert={showAlert}/>}/>
+            
+          <Route path="/about" element={<About mode ={mode}/>}/>
+            
+          <Route path="/contact" element={<Contact mode={mode}/>}/>
+
+          <Route path="/Utility-Available" element={<UtilsAvail mode={mode}/>}/>
+            
+        </Routes>
+      
+        {/* <Switch>
+          <Route path="/">
+            <Utils bgmode={bgmode} showAlert={showAlert}/>
+          </Route>
+          <Route path="/about">
+            <About mode ={mode}/>
+          </Route>
+          <Route path="/contact">
+            <Contact mode={mode}/>
+          </Route>
+          <Route path="/UtilityAvailable">
+            <UtilsAvail mode={mode}/>
+          </Route>
+        </Switch> */}
+      </Router>
+
   );
 }
 
