@@ -12,10 +12,8 @@ export default function Utils(props) {
         // clk.style.textTransform="lowercase";
         // settext("hello this is zaheer");
         settext(event.target.value);
-        console.log("handled on change")
     }
     const handleUpClick = () => {
-        console.log("this is clicked")
         if (clk.style.textTransform === "uppercase") {
             clk.style.textTransform = "lowercase";
             props.showAlert("Converted to LowerCase","Success");
@@ -48,7 +46,6 @@ export default function Utils(props) {
             }
             navigator.clipboard.writeText(words.join(" "))
             settext(words.join(" "));
-            console.log(words);
         }
         else{
             navigator.clipboard.writeText(copied.value);
@@ -82,9 +79,9 @@ export default function Utils(props) {
                     
                 </div>
                 <div>
-                    <h1>preview</h1>
-                    <p>{text}</p>
-                    <p>{text.split(" ").length} word, {text.length} characters</p>
+                    <h1 style={{margin: '1rem'}}>preview</h1>
+                    <p style={{margin: '1rem'}}>{text.length>0?text:"Write something in the text box above to preview it"}</p>
+                    <p style={{margin: '1rem'}}>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} word, {text.length} characters</p>
                 </div>
                 {/* <button id="dark-light" onClick={handledarkmode}>
                     change to dark mode
